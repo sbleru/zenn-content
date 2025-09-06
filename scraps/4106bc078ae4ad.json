@@ -1,0 +1,13 @@
+{
+  "title": "VSCode",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-01-19",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-19",
+      "body_markdown": "# SQL Formatter\n\nhttps://marketplace.visualstudio.com/items?itemName=nmrmsys.vscode-sql-formatter-mod\n\n"
+    }
+  ]
+}

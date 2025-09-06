@@ -1,0 +1,25 @@
+{
+  "title": "returnパラメータの設定のやり方いろいろメモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-07-07",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-07-07",
+      "body_markdown": "## 概要\n\n- ログインする際にログイン用のページに遷移し、戻ってくる場合、元いたページに戻ってくるサービスはよくある\n- その各所やり方メモ\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-07-07",
+      "body_markdown": "# Auth0\n\n## tl;dr\n- Cookieに保存して戻ってきたらCookieから値取り出してリダイレクトしてる\n\n## 詳細\n\n- loginWithRedirectで戻ってくるurlを指定できる\n\n```\nonClick={() => loginWithRedirect({\n  appState: {\n    returnTo: \"/profile\"\n  }\n})}\n```\n\n- 実体\nhttps://github.com/auth0/auth0-spa-js/blob/66e0dfbe8ed9dc35406d0281cd60cd14f705e9e7/src/Auth0Client.ts#L435-L473\n\n- Transcripter\nhttps://github.com/auth0/auth0-spa-js/blob/66e0dfbe8ed9dc35406d0281cd60cd14f705e9e7/src/transaction-manager.ts#L16-L44\n\n- Storage\nhttps://github.com/auth0/auth0-spa-js/blob/66e0dfbe8ed9dc35406d0281cd60cd14f705e9e7/src/storage.ts#L21-L50",
+      "body_updated_at": "2023-07-07"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-07-07",
+      "body_markdown": "# GitHub\n\n## tl;dr\n\n- URLに戻ってくるURLをクエリパラメータで設定してる\n\n## 詳細\n\n- ログインが必要なページを用意する\n  - https://github.com/settings/profile\n- シークレットモードでアクセス\n  - こうなる\n  - https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile\n  - encodeURIComponent、decodeURIComponent使ってそう\n",
+      "body_updated_at": "2023-07-07"
+    }
+  ]
+}

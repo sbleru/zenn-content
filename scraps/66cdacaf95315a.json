@@ -1,0 +1,14 @@
+{
+  "title": "Spread Sheet",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-01-22",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-22",
+      "body_markdown": "# IMPORTDATA\n\ncsvなどのURLを指定して読み込む。RedashのURLとか。\n1時間ごとに更新してくれてる。\nhttps://support.google.com/docs/answer/58515#zippy=%2Cchange-locale-and-time-zone%2Cchange-the-language-for-functions%2Cchoose-how-often-formulas-calculate\n",
+      "body_updated_at": "2022-01-22"
+    }
+  ]
+}

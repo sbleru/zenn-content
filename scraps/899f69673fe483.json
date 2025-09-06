@@ -1,0 +1,30 @@
+{
+  "title": "SWR",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-02-16",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2022-02-16",
+      "body_markdown": "- データ取得ライブラリ\nhttps://swr.vercel.app/"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-02-16",
+      "body_markdown": "# 更新処理との連携\n\nmutate使う。\nhttps://github.com/vercel/swr/issues/93#issuecomment-551110903\n\nデータ更新はpureなactionじゃないからswrでやるのは違う。描画のために待つ必要ない。\nmutate使ってローカルデータによる変更→再fetchによってさらに更新みたいな流れ。"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-02-16",
+      "body_markdown": "# メモ\n\nhttps://zenn.dev/yuitosato/articles/b3b3d22accdaa3",
+      "body_updated_at": "2022-02-16"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-02-19",
+      "body_markdown": "# テスト\n\nミドルウェア使う方法もあるけどこれの方がシンプルそう。\n\nhttps://swr.vercel.app/ja/blog/swr-v1#%E4%BB%A3%E6%9B%BF%E3%83%87%E3%83%BC%E3%82%BF\n\nhttps://swr.vercel.app/docs/with-nextjs\n\nてかこれ\nhttps://github.com/vercel/swr/tree/1bdec379667fbb33542532afa47688012cc5dc5b/test",
+      "body_updated_at": "2022-02-19"
+    }
+  ]
+}

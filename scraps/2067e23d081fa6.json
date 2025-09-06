@@ -1,0 +1,13 @@
+{
+  "title": "Turborepo",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-02-11",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2022-02-11",
+      "body_markdown": "https://turborepo.org/\n\n## turborepoなプロジェクト作成\n\n```\nnpx create-turbo@latest\n```\n\n## Vercel Deploy\n\nhttps://vercel.com/docs/concepts/git/monorepos#turborepo"
+    }
+  ]
+}

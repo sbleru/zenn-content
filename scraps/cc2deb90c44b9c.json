@@ -1,0 +1,28 @@
+{
+  "title": "Raycast導入",
+  "closed": true,
+  "archived": false,
+  "created_at": "2023-01-03",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-01-03",
+      "body_markdown": "https://www.raycast.com/\n\n# Clipboard History\n\n特定アプリのクリップボードコピー無視できる。\n1passwordとか指定すると良さそう。\n\n![](https://storage.googleapis.com/zenn-user-upload/1cb0b568555d-20230103.png)\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-01-03",
+      "body_markdown": "# Launcher\n\n- ApplicationやRaycastの機能を探して、それぞれHotkeyを設定できる\n\n![](https://storage.googleapis.com/zenn-user-upload/2dde9df7b4ba-20230103.png)\n\nLauncherはhammerspoon使ってたけど、lua少し書く必要あり、ここまでGUIで設定らくらくにできるなら移行してしまおう。\nhttps://www.hammerspoon.org/"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-01-03",
+      "body_markdown": "# Export / Import\n\nできる\n\n![](https://storage.googleapis.com/zenn-user-upload/1838a668494f-20230103.png)\n\n\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-01-03",
+      "body_markdown": "Raycastに移行することにした\n\n- Alfread 使ってたけどたいしてカスタマイズしてない\n- RaycastにHotkey設定集約できる\n- Extensionも良さそう\n"
+    }
+  ]
+}

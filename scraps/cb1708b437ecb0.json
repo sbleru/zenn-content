@@ -1,0 +1,13 @@
+{
+  "title": "オブザーバビリティ・エンジニアリング",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-07-26",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-07-26",
+      "body_markdown": "# 構造化ロギング\n\nCloud Loggingは、console.logにオブジェクトをJSON.stringfyして渡せば構造化データとして扱ってくれる\n\n\n- [構造化ロギング  |  Cloud Logging  |  Google Cloud](https://cloud.google.com/logging/docs/structured-logging?hl=ja#default-parsers)\n- [NodeでのCloud LoggingとError Reportの最適な使用方法を実験で導き出す](https://zenn.dev/aiji42/articles/b41232aea7ca34)\n\n"
+    }
+  ]
+}

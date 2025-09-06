@@ -1,0 +1,23 @@
+{
+  "title": "scaffdog",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-02-25",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-02-25",
+      "body_markdown": "# Injection\n\nhttps://scaff.dog/docs/templates/injection#before--after\n\n1 headに対して1箇所のみしか利用できないかも。\n\n```txt\n{{ read output.abs | before \"hoge\" }}\nconsole.log('first hoge line');\n{{ read output.abs | after \"hoge\" -1 }}\n```\n\nこれはできるけど\n\n```txt\n{{ read output.abs | before \"hoge\" }}\nconsole.log('first hoge line');\n{{ read output.abs | after \"hoge\" -1 }}\n{{ read output.abs | before \"fuga\" }}\nconsole.log('first fuga line');\n{{ read output.abs | after \"fuga\" -1 }}\n```\n\nこれはできない\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-02-25",
+      "body_markdown": "# Install\n\nInstall\n```\npnpm add -w -D scaffdog\n```\n\nInitialize\n```\nnpx scaffdog init\n```\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-02-25",
+      "body_markdown": "\n```md\nline 1\nline 2\nline 3\n```\n\n編集対象のファイルが上記の場合。\n\n```\n{{ read output.abs | before \"line 2\" }}\ninjected text\n{{ read output.abs | after \"line 2\" -1 }}\n```\n\n上記のscaffdogの実行は以下の手順で編集される。\n\n1. line 2より上の行が追記される\n\n```\nline 1\n```\n\n2. injected textが追記される\n\n```\nline 1\ninjected text\n```\n\n3. line 2以下の行が追記される\n\n```\nline 1\ninjected text\nline 2\nline 3\n```\n\nつまり、before、afterは指定した行の上か下全てを追記することになるため、複数箇所にinjectすることはできない（たぶん）。\n（= line 2の上にaaa、line 3の上にbbbのようなことはできない）\n\nまた`#`を分けて行ったとしても、後の実行で上書きされる。\n"
+    }
+  ]
+}

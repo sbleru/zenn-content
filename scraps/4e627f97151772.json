@@ -1,0 +1,13 @@
+{
+  "title": "Feed追加",
+  "closed": true,
+  "archived": false,
+  "created_at": "2023-01-02",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-01-02",
+      "body_markdown": "# GitHub\n\nhttps://vilcins.medium.com/rss-feeds-for-your-github-releases-tags-and-activity-cbda2c51373\n\n```\n/* Repo releases */\n\nhttps://github.com/:owner/:repo/releases.atom\n\n/* Repo commits */\n\nhttps://github.com/:owner/:repo/commits.atom\n\n/* Private feed (You can find Subscribe to your news feed in dashboard page after login) */\n\nhttps://github.com/:user.private.atom?token=:secret\n\n/* Repo tags */\n\nhttps://github.com/:user/:repo/tags.atom\n\n/* User activity */\n\nhttps://github.com/:user.atom\n```\n\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "GitHub Actionからfirebaseへのデプロイ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-08-01",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-08-01",
+      "body_markdown": "## 背景\n- 認証トークン利用するフローがdeprecatedなやり方になっている\n  - https://github.com/firebase/firebase-tools#using-with-ci-systems\n  - おそらく権限大きいから？必要な権限付与したサービスアカウントのキー使ってねという方針になっている\n  - （でも最近はサービスアカウントのキーダウンロードも非推奨になってるよね）\n\nメモ\n- [Firebaseにデプロイするときに認証トークンを使うのはやめよう（GitHub Actions）](https://zenn.dev/chizu_puzzle/articles/e54f0663426b22)\n\n## みてる\n\n- [GitHub pull リクエストによるライブチャネルとプレビュー チャネルへのデプロイ  |  Firebase Hosting](https://firebase.google.com/docs/hosting/github-integration?hl=ja)\n- [Deploy to Firebase Hosting · Actions · GitHub Marketplace](https://github.com/marketplace/actions/deploy-to-firebase-hosting)",
+      "body_updated_at": "2023-08-01"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-08-01",
+      "body_markdown": "##  firebase init hosting:github がやること\n\n- 以下のRoleを持つサービスアカウント（ `github-action` のprefixがついてる ）が作成される\n  - API Keys Viewer\n  - Cloud Run Viewer\n  - Firebase Authentication Admin\n  - Firebase Hosting Admin\n- このサービスアカウントのキーが生成され、GitHubのsecretに保存されている。\n- GitHub Actionはこのsecretに保存されたサービスアカウントの権限を利用して、firebaseへデプロイを行う。\n  - デプロイを行うためのワークフローも自動生成される\n\n"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-08-01",
+      "body_markdown": "## workload identityを利用する場合\n\nfirebase公式ではdocumentなさそう。\nただ、できそうではある\n\n- [`GOOGLE_APPLICATION_CREDENTIALS` doesn't accept workload identity federation · Issue #3926 · firebase/firebase-tools](https://github.com/firebase/firebase-tools/issues/3926)\n- [GitHub Actions からのキーなしの認証の有効化 | Google Cloud 公式ブログ](https://cloud.google.com/blog/ja/products/identity-security/enabling-keyless-authentication-from-github-actions)\n- [google-github-actions/auth: A GitHub Action for authenticating to Google Cloud.](https://github.com/google-github-actions/auth)\n- [GitHub Actions + google-github-actions/auth で GCP keyless CI/CD](https://zenn.dev/vvakame/articles/gha-and-gcp-workload-identity)\n- [Github Actions で OIDC を使って Firebase Hosting に deploy したい](https://zenn.dev/nbstsh/scraps/7a707bb5d60749)\n  - これそのまま参考になりそう\n",
+      "body_updated_at": "2023-08-01"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2023-08-01",
+      "body_markdown": "## workload identityを利用してみる\n\n[GitHub Actions からのキーなしの認証の有効化 | Google Cloud 公式ブログ](https://cloud.google.com/blog/ja/products/identity-security/enabling-keyless-authentication-from-github-actions)\n\n[Workload Identity 連携の構成  |  IAM のドキュメント  |  Google Cloud](https://cloud.google.com/iam/docs/configuring-workload-identity-federation?hl=ja#github-actions)\n\n> このガイドでは、外部 ID プロバイダによって発行された認証情報を使用して、サービス アカウントの権限を借用し、Google Cloud のリソースにアクセスする方法について説明します。このプロセスは Workload Identity 連携と呼ばれます。\n\n> Workload Identity 連携の一般的なユースケースは次のとおりです。\n\n> Google Cloud の外部で実行されるバックグラウンド アプリケーションまたは継続的インテグレーション / 継続的デリバリー（CI / CD）パイプラインを有効にして、Google Cloud のリソースと API にアクセスできるようにする。\nGoogle Cloud の外部で実行されるウェブ アプリケーションのユーザーが、Cloud Storage や BigQuery などの Google Cloud サービスに保存されているデータにアクセスできるようにする。\n\n\nイメージで書いてる\n- 外部サービスが直接サービスアカウントを利用せず、一個仲介挟むことで、外部サービス側の変更なくキーローテーションとかができる\n  - サービスアカウントのキーはそれ自体に有効期限があり、作り直すことでしか伸ばすことができない（予想）\n- 仲介役が、キーの有効期限を決めて権限を一時的に渡すことができる\n  - 外部サービスにサービスアカウントを渡す場合は、ローテーションが大変なので基本無期限のキーを渡しておく。各所ドキュメントそうなってるところが多い。\n"
+    }
+  ]
+}

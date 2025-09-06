@@ -1,0 +1,14 @@
+{
+  "title": "PythonでindexOf",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-03-09",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-03-09",
+      "body_markdown": "メモ\n\n```python\ndef index_of(string, search, default=-1):\n    return string.index(search) if search in string else default\n```\n\n```\n> index_of(\"abcde\", \"a\")\n0\n\n> index_of(\"abcde\", \"c\")\n2\n\n> index_of(\"abcde\", \"f\")\n-1\n```",
+      "body_updated_at": "2023-03-09"
+    }
+  ]
+}

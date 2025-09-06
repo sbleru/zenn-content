@@ -1,0 +1,13 @@
+{
+  "title": "GitHub Actions - Slack",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-02-25",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-02-25",
+      "body_markdown": "## workflow名指定でsubscribeする\n\nhttps://github.com/integrations/slack#workflow-notification-filters\n\n```\n/github subscribe sbleru/hoge workflows:{name:\"Frontend Deploy\",\"Backend Deploy\"}\n```"
+    }
+  ]
+}

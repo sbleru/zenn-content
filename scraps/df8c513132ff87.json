@@ -1,0 +1,55 @@
+{
+  "title": "Vercel",
+  "closed": false,
+  "archived": false,
+  "created_at": "2022-01-18",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-18",
+      "body_markdown": "# 環境変数\n\nhttps://vercel.com/docs/concepts/projects/environment-variables\n\n- Production\n- Preview\n- Development\n  - 開発専用。`vercel env pull && next dev` で環境変数使いながらローカル開発できそう。\n\nの3つの環境別に環境変数を加えることができる。\nセキュアな値を保存してよい。\n\nPreviewに関しては、特定のブランチを指定することもできる。\n特定のブランチ別に別々の環境変数を加えることができるので、\n- staging-dev ではdevの環境変数でデプロイする\n- stagingではprodの環境変数でデプロイする\nといったこともできそう。\n\n## 環境変数運用\n\nこっちのやり方がいいかも\nhttps://nextjs.org/docs/basic-features/environment-variables\nhttps://github.com/vercel/next.js/tree/canary/examples/environment-variables\n\n\n環境変数の優先度\n\n- 開発環境（next dev）\n.env.local > .env.development > .env\n- 本番環境（next start）\n.env.production > .env\n\nただし、previewがデプロイされる時、`.env.production` が読み込まれる。\nまた、デプロイ時の優先度はこうなる。\n- preview環境\nvercel上のenv > .env.local > .env.development > .env\n- prod環境\nvercel上のenv > .env.production > .env\n\n\n## CLI\n\n```\necho -n hoge | vercel env add NEXT_PUBLIC_HOGE preview\n```",
+      "body_updated_at": "2022-01-21"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-18",
+      "body_markdown": "vercel envがfirebase configみたいな感じか。\nvercel CLIでセットとかもできる。"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-18",
+      "body_markdown": "ブラウザ（ローカル実行時など）から環境変数を参照するには、prefixに`NEXT_PUBLIC_`をつけないといけない。firebase config関連はこれつけて管理かな。\nサーバーサイドでしか使わないやつは`NEXT_PUBLIC_`つけず、secretのままにしておく。\nhttps://nextjs.org/docs/basic-features/environment-variables#exposing-environment-variables-to-the-browser"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-19",
+      "body_markdown": "Preview Mode\nhttps://nextjs.org/docs/advanced-features/preview-mode"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-19",
+      "body_markdown": "## Testing\n\nhttps://unlyed.github.io/next-right-now/concepts/testing.html\n\nvercel上でテストを行う場合はbuildコマンドの中に入れる。\nまたはgithub actionsでやった方がいいか？"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-19",
+      "body_markdown": "## Deployment\n\n### Build無効\n\nhttps://vercel.com/support/articles/how-do-i-use-the-ignored-build-step-field-on-vercel\n\n### 特定ブランチ\n\nhttps://sunday-morning.app/posts/2021-09-26-vercel-target-branch-deployment",
+      "body_updated_at": "2022-01-19"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-19",
+      "body_markdown": "# Preview環境にカスタムドメイン設定\n\nhttps://sunday-morning.app/posts/2021-05-02-vercel-preview-fixed-subdomain\n\nnoindexが勝手にされないので別途行う必要がある。\nhttps://vercel.com/support/articles/are-vercel-preview-deployment-indexed-by-search-engines"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-21",
+      "body_markdown": "https://vercel.com/docs/concepts/projects/environment-variables#system-environment-variables\n\nNEXT_PUBLIC_VERCEL_ENV\nってデプロイした時にしか勝手にexposeされないのか。\nローカル実行だとundefined。\nんー明示的にどこか定義するしかないか。"
+    },
+    {
+      "author": "sbleru",
+      "created_at": "2022-01-27",
+      "body_markdown": "# Github actionsによるデプロイ\n\nhttps://zenn.dev/nikaera/articles/vercel-github-actions\n\nhttps://github.com/marketplace/actions/vercel-action\n\nチームプロジェクトにデプロイするときは、scopeの指定が必要なので注意（ハマった）\n\nvercel action使わない方法参考\nhttps://www.eliostruyf.com/deploy-site-vercel-github-actions-releases/"
+    }
+  ]
+}

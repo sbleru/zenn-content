@@ -1,0 +1,13 @@
+{
+  "title": "git復元メモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-09-04",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2021-09-04",
+      "body_markdown": "### 間違って消したブランチを戻したい\n\nmainを消したとして。\n\n```\ngit checkout -b main <ブランチが存在していたコミットハッシュ>\n```"
+    }
+  ]
+}

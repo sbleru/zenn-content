@@ -1,0 +1,13 @@
+{
+  "title": "npmスクリプト",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-09-04",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2021-09-04",
+      "body_markdown": "\n### npmスクリプトで引数を渡す\n\nhttps://www.twilio.com/blog/npm-scripts-jp\n\n```\n\"scripts\": {\n  \"demo\": \"echo \\\"Hello $npm_config_first $npm_config_last\\\"\"\n}\n```\n\n```\nnpm run demo --last=Kundel --first=Dominik\n```"
+    }
+  ]
+}

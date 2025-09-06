@@ -1,0 +1,13 @@
+{
+  "title": "AI質問箱",
+  "closed": false,
+  "archived": false,
+  "created_at": "2023-04-04",
+  "comments": [
+    {
+      "author": "sbleru",
+      "created_at": "2023-04-04",
+      "body_markdown": "# あなたはプログラマーです。Interfaceと実装の両方がある時、それぞれコメントはどのような内容を記載しますか？\n\n![](https://storage.googleapis.com/zenn-user-upload/951963a551ba-20230404.png)\n"
+    }
+  ]
+}
